@@ -1,3 +1,6 @@
+# Modify LED widget from the PyQt4/5 to use PySide6
+# Original widget: https://github.com/jazzycamel/QLed.git
+
 from colorsys import rgb_to_hls, hls_to_rgb
 
 from PySide6.QtWidgets import *
