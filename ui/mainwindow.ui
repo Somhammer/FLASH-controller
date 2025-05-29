@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>861</width>
+    <width>800</width>
     <height>480</height>
    </rect>
   </property>
@@ -19,33 +19,134 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(35, 35, 35);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_4">
-    <item row="4" column="4">
-     <widget class="QPushButton" name="pushStart">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="2" column="1">
+     <widget class="QFrame" name="fameTuning">
+      <property name="styleSheet">
+       <string notr="true">border: 0px;
+border-radius: 15px;
+background-color: rgb(42, 42, 42);</string>
       </property>
-      <property name="minimumSize">
-       <size>
-        <width>90</width>
-        <height>90</height>
-       </size>
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Plain</enum>
       </property>
-      <property name="text">
-       <string>Start</string>
+      <property name="lineWidth">
+       <number>0</number>
       </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="0">
+        <widget class="QLabel" name="label1">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Noto Sans KR</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(153, 153, 153)</string>
+         </property>
+         <property name="text">
+          <string>Press &quot;Tune&quot; button</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="2">
+        <widget class="QLabel" name="label3">
+         <property name="font">
+          <font>
+           <family>Noto Sans KR</family>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(153, 153, 153)</string>
+         </property>
+         <property name="text">
+          <string>Beam tuning</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label2">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Noto Sans KR</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(153, 153, 153)</string>
+         </property>
+         <property name="text">
+          <string>before beam on.</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
-    <item row="3" column="4">
+    <item row="1" column="0" rowspan="3">
+     <widget class="QFrame" name="frameGraph">
+      <property name="styleSheet">
+       <string notr="true">border-radius: 15px;
+background-color: rgb(42, 42, 42);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <widget class="QLabel" name="iconBeamStatusLight">
+         <property name="minimumSize">
+          <size>
+           <width>280</width>
+           <height>280</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="2">
      <widget class="QPushButton" name="pushTune">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -61,123 +162,490 @@
       </property>
       <property name="font">
        <font>
-        <pointsize>12</pointsize>
+        <family>Noto Sans KR ExtraBold</family>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+  border: 2px solid rgb(71, 111, 243);
+  border-radius: 10px;
+  background-color: rgb(33, 36, 44);
+  color: rgb(71, 111, 243);
+}
+QPushButton:hover {
+  border: 2px solid rgb(141, 255, 116);
+  color: rgb(141, 255, 116);
+}</string>
       </property>
       <property name="text">
        <string>Tune</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="3">
-     <widget class="QGroupBox" name="groupTunning">
-      <property name="minimumSize">
+    <item row="4" column="0">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
        <size>
-        <width>0</width>
-        <height>90</height>
+        <width>20</width>
+        <height>40</height>
        </size>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
+     </spacer>
+    </item>
+    <item row="1" column="3" rowspan="3" colspan="2">
+     <widget class="QFrame" name="frameKeypad">
+      <property name="styleSheet">
+       <string notr="true">border-radius: 15px;
+background-color: rgb(42, 42, 42);</string>
       </property>
-      <property name="title">
-       <string>Beam Tuning</string>
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
-        <widget class="QLabel" name="labelTuneWarning">
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Press &quot;Tune&quot; button</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_2">
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>before beam tunning.</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="1" column="5" rowspan="4" colspan="3">
-     <widget class="QGroupBox" name="groupKeypad">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="title">
-       <string>Keypad</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_3">
-       <item row="2" column="0">
-        <widget class="QPushButton" name="pushNum1">
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>6</number>
+       </property>
+       <property name="rightMargin">
+        <number>6</number>
+       </property>
+       <property name="bottomMargin">
+        <number>6</number>
+       </property>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="pushNum0">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>70</height>
+          </size>
+         </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <family>Noto Sans KR</family>
+           <pointsize>18</pointsize>
+           <bold>true</bold>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  border: 0px solid;
+  border-radius: 6px;
+  background-color: rgb(51, 51, 51);
+  color: rgb(153, 153, 153);
+}
+QPushButton:hover {
+  border: 2px solid rgb(71, 111, 243);
+  border-radius: 10px;
+  background-color: rgb(33, 36, 44);
+  color: rgb(71, 111, 243);
+}</string>
+         </property>
          <property name="text">
-          <string>1</string>
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="pushNum2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Noto Sans KR</family>
+           <pointsize>18</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  border: 0px solid;
+  border-radius: 6px;
+  background-color: rgb(51, 51, 51);
+  color: rgb(153, 153, 153);
+}
+QPushButton:hover {
+  border: 2px solid rgb(71, 111, 243);
+  border-radius: 10px;
+  background-color: rgb(33, 36, 44);
+  color: rgb(71, 111, 243);
+}</string>
+         </property>
+         <property name="text">
+          <string>2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="pushNum8">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Noto Sans KR</family>
+           <pointsize>18</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  border: 0px solid;
+  border-radius: 6px;
+  background-color: rgb(51, 51, 51);
+  color: rgb(153, 153, 153);
+}
+QPushButton:hover {
+  border: 2px solid rgb(71, 111, 243);
+  border-radius: 10px;
+  background-color: rgb(33, 36, 44);
+  color: rgb(71, 111, 243);
+}</string>
+         </property>
+         <property name="text">
+          <string>8</string>
          </property>
         </widget>
        </item>
        <item row="0" column="2">
         <widget class="QPushButton" name="pushNum9">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <family>Noto Sans KR</family>
+           <pointsize>18</pointsize>
+           <bold>true</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  border: 0px;
+  border-radius: 15px;
+  background-color: rgb(210, 210, 210);
+
+}
+QPushButton:hover {
+  background-color: rgb(175, 175, 175);
+}QPushButton {
+  border: 0px solid;
+  border-radius: 6px;
+  background-color: rgb(51, 51, 51);
+  color: rgb(153, 153, 153);
+}
+QPushButton:hover {
+  border: 2px solid rgb(71, 111, 243);
+  border-radius: 10px;
+  background-color: rgb(33, 36, 44);
+  color: rgb(71, 111, 243);
+}</string>
          </property>
          <property name="text">
           <string>9</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="0">
-        <widget class="QPushButton" name="pushNum7">
+       <item row="2" column="0">
+        <widget class="QPushButton" name="pushNum1">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <family>Noto Sans KR</family>
+           <pointsize>18</pointsize>
+           <bold>true</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  border: 0px solid;
+  border-radius: 6px;
+  background-color: rgb(51, 51, 51);
+  color: rgb(153, 153, 153);
+}
+QPushButton:hover {
+  border: 2px solid rgb(71, 111, 243);
+  border-radius: 10px;
+  background-color: rgb(33, 36, 44);
+  color: rgb(71, 111, 243);
+}</string>
+         </property>
+         <property name="text">
+          <string>1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="pushNum4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Noto Sans KR</family>
+           <pointsize>18</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  border: 0px solid;
+  border-radius: 6px;
+  background-color: rgb(51, 51, 51);
+  color: rgb(153, 153, 153);
+}
+QPushButton:hover {
+  border: 2px solid rgb(71, 111, 243);
+  border-radius: 10px;
+  background-color: rgb(33, 36, 44);
+  color: rgb(71, 111, 243);
+}</string>
+         </property>
+         <property name="text">
+          <string>4</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="pushDot">
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Noto Sans KR ExtraBold</family>
+           <pointsize>18</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  border: 0px solid;
+  border-radius: 6px;
+  background-color: rgb(51, 51, 51);
+  color: rgb(153, 153, 153);
+  padding-bottom: 5px;
+}
+QPushButton:hover {
+  border: 2px solid rgb(71, 111, 243);
+  border-radius: 10px;
+  background-color: rgb(33, 36, 44);
+  color: rgb(71, 111, 243);
+}</string>
+         </property>
+         <property name="text">
+          <string>.</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QPushButton" name="pushDelete">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>20</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  border: 0px solid;
+  border-radius: 10px;
+  background-color: rgb(51, 51, 51);
+  color: rgb(153, 153, 153);
+}
+QPushButton:hover {
+  border: 2px solid rgb(71, 111, 243);
+  border-radius: 10px;
+  background-color: rgb(33, 36, 44);
+  color: rgb(71, 111, 243);
+  icon: url(':/icons/backspace_blue.png');
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../resource.qrc">
+           <normaloff>:/icons/backspace_gray.png</normaloff>:/icons/backspace_gray.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="pushNum7">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Noto Sans KR</family>
+           <pointsize>18</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  border: 0px solid;
+  border-radius: 6px;
+  background-color: rgb(51, 51, 51);
+  color: rgb(153, 153, 153);
+}
+QPushButton:hover {
+  border: 2px solid rgb(71, 111, 243);
+  border-radius: 10px;
+  background-color: rgb(33, 36, 44);
+  color: rgb(71, 111, 243);
+}</string>
          </property>
          <property name="text">
           <string>7</string>
@@ -187,299 +655,162 @@
        <item row="1" column="2">
         <widget class="QPushButton" name="pushNum6">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <family>Noto Sans KR</family>
+           <pointsize>18</pointsize>
+           <bold>true</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  border: 0px solid;
+  border-radius: 6px;
+  background-color: rgb(51, 51, 51);
+  color: rgb(153, 153, 153);
+}
+QPushButton:hover {
+  border: 2px solid rgb(71, 111, 243);
+  border-radius: 10px;
+  background-color: rgb(33, 36, 44);
+  color: rgb(71, 111, 243);
+}</string>
          </property>
          <property name="text">
           <string>6</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
-        <widget class="QPushButton" name="pushNum0">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QPushButton" name="pushNum8">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>8</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QPushButton" name="pushNum3">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>3</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QPushButton" name="pushNum2">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>2</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="pushNum4">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>4</string>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="1">
         <widget class="QPushButton" name="pushNum5">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
+         </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <family>Noto Sans KR</family>
+           <pointsize>18</pointsize>
+           <bold>true</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  border: 0px solid;
+  border-radius: 6px;
+  background-color: rgb(51, 51, 51);
+  color: rgb(153, 153, 153);
+}
+QPushButton:hover {
+  border: 2px solid rgb(71, 111, 243);
+  border-radius: 10px;
+  background-color: rgb(33, 36, 44);
+  color: rgb(71, 111, 243);
+}</string>
          </property>
          <property name="text">
           <string>5</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="2">
-        <widget class="QPushButton" name="pushDelete">
+       <item row="2" column="2">
+        <widget class="QPushButton" name="pushNum3">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="font">
-          <font>
-           <pointsize>12</pointsize>
-          </font>
+         <property name="minimumSize">
+          <size>
+           <width>60</width>
+           <height>60</height>
+          </size>
          </property>
-         <property name="text">
-          <string>Delete</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QPushButton" name="pushDot">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>.</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="4" column="3">
-     <widget class="QGroupBox" name="groupTime">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>90</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="title">
-       <string>Beam time</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_5">
-       <item row="0" column="0">
-        <widget class="QLineEdit" name="lineTime">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>16</pointsize>
-          </font>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="labelUnit">
          <property name="maximumSize">
           <size>
-           <width>50</width>
-           <height>16777215</height>
+           <width>60</width>
+           <height>60</height>
           </size>
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <family>Noto Sans KR</family>
+           <pointsize>18</pointsize>
+           <bold>true</bold>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+  border: 0px solid;
+  border-radius: 6px;
+  background-color: rgb(51, 51, 51);
+  color: rgb(153, 153, 153);
+}
+QPushButton:hover {
+  border: 2px solid rgb(71, 111, 243);
+  border-radius: 10px;
+  background-color: rgb(33, 36, 44);
+  color: rgb(71, 111, 243);
+}</string>
+         </property>
          <property name="text">
-          <string>ms</string>
+          <string>3</string>
          </property>
         </widget>
        </item>
       </layout>
      </widget>
     </item>
-    <item row="6" column="6">
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string/>
+    <item row="1" column="1">
+     <widget class="QFrame" name="fameConnection">
+      <property name="styleSheet">
+       <string notr="true">border: 0px;
+border-radius: 15px;
+background-color: rgb(42, 42, 42);</string>
       </property>
-     </widget>
-    </item>
-    <item row="2" column="0" rowspan="3" colspan="3">
-     <widget class="QLabel" name="iconBeamStatusLight">
-      <property name="text">
-       <string/>
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignHCenter|Qt::AlignTop</set>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Plain</enum>
       </property>
-     </widget>
-    </item>
-    <item row="6" column="7">
-     <widget class="QPushButton" name="pushQuit">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
+      <property name="lineWidth">
+       <number>0</number>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Quit</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0" colspan="3">
-     <widget class="QLabel" name="labelBeamStatus">
-      <property name="font">
-       <font>
-        <pointsize>34</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>BEAM OFF</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="3">
-     <widget class="QGroupBox" name="groupConnection">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>90</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="title">
-       <string>Connection</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
-        <widget class="QLabel" name="iconConnectionLight">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="1" column="1">
         <widget class="QLabel" name="labelConnection">
          <property name="maximumSize">
           <size>
@@ -489,18 +820,245 @@
          </property>
          <property name="font">
           <font>
+           <family>Noto Sans KR</family>
            <pointsize>12</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(153, 153, 153)</string>
+         </property>
          <property name="text">
           <string>Disconnected</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="iconConnectionLight">
+         <property name="font">
+          <font>
+           <family>나눔고딕OTF ExtraBold</family>
+           <pointsize>9</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="2">
+        <widget class="QLabel" name="labelPosition">
+         <property name="font">
+          <font>
+           <family>Noto Sans KR</family>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(153, 153, 153)</string>
+         </property>
+         <property name="text">
+          <string>Connection</string>
          </property>
         </widget>
        </item>
       </layout>
      </widget>
     </item>
-    <item row="2" column="4">
+    <item row="4" column="4">
+     <widget class="QPushButton" name="pushQuit">
+      <property name="maximumSize">
+       <size>
+        <width>70</width>
+        <height>70</height>
+       </size>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+  border: 0px solid;
+  background-color: transparent;
+}
+
+QPushButton:hover {
+  icon: url(':/icons/power_green.png');
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../resource.qrc">
+        <normaloff>:/icons/power_gray.png</normaloff>
+        <normalon>:/icons/power_gray.png</normalon>:/icons/power_gray.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>48</width>
+        <height>48</height>
+       </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="pushStart">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>90</width>
+        <height>90</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Noto Sans KR ExtraBold</family>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+  border: 2px solid rgb(71, 111, 243);
+  border-radius: 10px;
+  background-color: rgb(33, 36, 44);
+  color: rgb(71, 111, 243);
+}
+QPushButton:hover {
+  border: 2px solid rgb(141, 255, 116);
+  color: rgb(141, 255, 116);
+}</string>
+      </property>
+      <property name="text">
+       <string>Start</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="labelBeamStatus">
+      <property name="font">
+       <font>
+        <family>Noto Sans KR ExtraBold</family>
+        <pointsize>34</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(71, 111, 243)</string>
+      </property>
+      <property name="text">
+       <string>BEAM OFF</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QFrame" name="fameTime">
+      <property name="styleSheet">
+       <string notr="true">border: 0px;
+border-radius: 15px;
+background-color: rgb(42, 42, 42);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_7">
+       <item row="1" column="1">
+        <widget class="QLabel" name="labelUnit">
+         <property name="font">
+          <font>
+           <family>Noto Sans KR</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(85, 85, 85)</string>
+         </property>
+         <property name="text">
+          <string>ms</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLineEdit" name="lineTime">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>나눔스퀘어 ExtraBold</family>
+           <pointsize>16</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+border: 0px;
+border-radius: 10px;
+background-color: rgb(42, 42, 42);
+color: rgb(221, 221, 221);
+}
+QLineEdit:hover {
+color:rgb(71, 111, 243);
+}</string>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelTime">
+         <property name="font">
+          <font>
+           <family>Noto Sans KR</family>
+           <pointsize>12</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(153, 153, 153)</string>
+         </property>
+         <property name="text">
+          <string>Beam time</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="2">
      <widget class="QPushButton" name="pushConnect">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -516,20 +1074,46 @@
       </property>
       <property name="font">
        <font>
-        <pointsize>12</pointsize>
+        <family>Noto Sans KR ExtraBold</family>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+  border: 2px solid rgb(71, 111, 243);
+  border-radius: 10px;
+  background-color: rgb(33, 36, 44);
+  color: rgb(71, 111, 243);
+}
+QPushButton:hover {
+  border: 2px solid rgb(141, 255, 116);
+  color: rgb(141, 255, 116);
+}</string>
       </property>
       <property name="text">
        <string>Connect</string>
       </property>
      </widget>
     </item>
-    <item row="6" column="0" colspan="3">
-     <widget class="QLCDNumber" name="lcdTimer"/>
+    <item row="0" column="4">
+     <widget class="QLabel" name="labelLogo">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../resource.qrc">:/icons/ncc.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

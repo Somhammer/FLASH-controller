@@ -140,18 +140,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushQuit.clicked.connect(self.close)
 
         # Keypad
-        self.pushNum0.clicked.connect(lambda: self.modify_beam_time(self.pushNum0.text()))
-        self.pushNum1.clicked.connect(lambda: self.modify_beam_time(self.pushNum1.text()))
-        self.pushNum2.clicked.connect(lambda: self.modify_beam_time(self.pushNum2.text()))
-        self.pushNum3.clicked.connect(lambda: self.modify_beam_time(self.pushNum3.text()))
-        self.pushNum4.clicked.connect(lambda: self.modify_beam_time(self.pushNum4.text()))
-        self.pushNum5.clicked.connect(lambda: self.modify_beam_time(self.pushNum5.text()))
-        self.pushNum6.clicked.connect(lambda: self.modify_beam_time(self.pushNum6.text()))
-        self.pushNum7.clicked.connect(lambda: self.modify_beam_time(self.pushNum7.text()))
-        self.pushNum8.clicked.connect(lambda: self.modify_beam_time(self.pushNum8.text()))
-        self.pushNum9.clicked.connect(lambda: self.modify_beam_time(self.pushNum9.text()))
-        self.pushDelete.clicked.connect(lambda: self.modify_beam_time(self.pushDelete.text()))
-        self.pushDot.clicked.connect(lambda: self.modify_beam_time(self.pushDot.text()))
+        self.pushNum0.clicked.connect(lambda: self.modify_beam_time(self.pushNum0))
+        self.pushNum1.clicked.connect(lambda: self.modify_beam_time(self.pushNum1))
+        self.pushNum2.clicked.connect(lambda: self.modify_beam_time(self.pushNum2))
+        self.pushNum3.clicked.connect(lambda: self.modify_beam_time(self.pushNum3))
+        self.pushNum4.clicked.connect(lambda: self.modify_beam_time(self.pushNum4))
+        self.pushNum5.clicked.connect(lambda: self.modify_beam_time(self.pushNum5))
+        self.pushNum6.clicked.connect(lambda: self.modify_beam_time(self.pushNum6))
+        self.pushNum7.clicked.connect(lambda: self.modify_beam_time(self.pushNum7))
+        self.pushNum8.clicked.connect(lambda: self.modify_beam_time(self.pushNum8))
+        self.pushNum9.clicked.connect(lambda: self.modify_beam_time(self.pushNum9))
+        self.pushDelete.clicked.connect(lambda: self.modify_beam_time(self.pushDelete))
+        self.pushDot.clicked.connect(lambda: self.modify_beam_time(self.pushDot))
 
     def update(self):
         if self.connection_status == CONNECTED:
@@ -197,16 +197,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.request_start.emit(self.on_beam, float(self.lineTime.text()))
         self.update()
 
-    def modify_beam_time(self, text):
-        if text == "Delete":
-            if len(self.lineTime.text()) > 0:
-                self.lineTime.setText(self.lineTime.text()[:-1])
-        elif text == ".":
-            if len(self.lineTime.text().split(".")) - 1 < 1:
-                self.lineTime.setText(self.lineTime.text()+text)
+    def modify_beam_time(self, button :QPushButton):
+        full_text = self.lineTime.text()
+        text = button.text()
+        if button == self.pushDelete:
+            if full_text == "": return
+            self.lineTime.setText(self.lineTime.text()[:-1])
+        elif button == self.pushDot:
+            if len(full_text.split(".")) > 1: return
+            self.lineTime.setText(self.lineTime.text()+text)
         else:
-            if text == "0":
-                if len(self.lineTime.text()) > 0 and self.lineTime.text()[0] == "0": return
             self.lineTime.setText(self.lineTime.text()+text)
 
     def on_beam_finished(self):
